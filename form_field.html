@@ -1,0 +1,245 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+   <!-- css section -->
+   <link rel="stylesheet" href="form.css">
+   <title>registration</title>
+
+
+   <!-- // jquery google cdn -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+   <!-- Validate for gender selection from address field using   JQuery -->
+   <script>
+      $(document).ready(function () {
+         $("textarea").click(function checkforGender1() {
+            var checkboxs = document.getElementsByName("gender");
+            var gendercheck = false;
+            for (var i = 0, l = checkboxs.length; i < l; i++) {
+               if (checkboxs[i].checked) {
+                  gendercheck = true;
+                  break;
+               }
+            } if (gendercheck == false) {
+               alert("Please select above field/gender");
+            }
+            return gendercheck
+         }
+         );
+      });
+   </script>
+
+
+   <!-- Validate for gender selection from age field selector using   JQuery -->\
+   <script>
+      $(document).ready(function () {
+         $(".input_gen").click(function checkforGender2() {
+            var checkboxs = document.getElementsByName("gender");
+            var gendercheck = false;
+            for (var i = 0, l = checkboxs.length; i < l; i++) {
+               if (checkboxs[i].checked) {
+                  gendercheck = true;
+                  break;
+               }
+            } if (gendercheck == false) {
+               alert("Please select your gender");
+            }
+            return gendercheck
+         }
+         );
+      });
+   </script>
+
+   <!-- navigate to home page section using jquery -->
+   <script>
+      $(document).ready(function () {
+         $("#btn").click(function () {
+            window.navigate("html_text.html");
+         });
+      });
+   </script>
+
+   <!-- hide and show registration page using jquery -->
+   <script>
+      $(document).ready(function () {
+         $("#hide").click(function () {
+            $("#signup-form").hide();
+         });
+         $("#show").click(function () {
+            $("#signup-form").show();
+         });
+      });
+   </script>
+</head>
+
+<body>
+
+
+
+   <!-- header section end -->
+
+   <!-- <section id="header"> -->
+   <!-- <div class="header-form"> -->
+   <!-- <h1>If Opportunities doesn't knock, build a door so do REGISTER </h1> -->
+   <!-- <img src="./img/register.jpg" alt="Registration"> -->
+   <!-- </div> -->
+   <!-- </section> -->
+
+   <!-- header section end -->
+
+   <!-- hide and show registration page button jquery -->
+   <button id="hide" class="button1" type="button" style="vertical-align:middle"><span style="content:'\00AB';">Hide
+         Registration Page </span></button>
+   <button id="show" class="button1" type="button" style="vertical-align:middle"><span>Show Registration
+         Page</span></button>
+
+
+   <!-- effect for hide and show registration page button jquery -->
+   <script>
+      $('#hide')
+         .on('mouseenter', function (event) {
+            $('body').css('background-color', '#34568B');
+         })
+         .on('mouseleave', function (event) {
+            $('body').css('background-color', 'white');
+         });
+   </script>
+   <script>
+      $('#show')
+         .on('mouseenter', function (event) {
+            $('body').css('background-color', '#6B5B95');
+         })
+         .on('mouseleave', function (event) {
+            $('body').css('background-color', 'white');
+         });
+   </script>
+
+   <!-- registration container section start -->
+   <section id="signup-form">
+      <div class="container-form">
+         <form action="First.html" target="_blank">
+            <div class="back-btn">
+            </div>
+            <table border: 2px solid black;>
+               <tr>
+                  <td>First Name:</td>
+                  <td><input type="text" size="30" maxlength="50" autofocus placeholder="Enter you first name"
+                        required /></td>
+               </tr>
+               <tr>
+                  <td>Last Name:</td>
+                  <td><input type="text" size="30" maxlength="50" autofocus placeholder="Enter you last name"
+                        required /></td>
+               </tr>
+
+               <!-- gender field start -->
+               <tr>
+                  <td>Gender:</td>
+                  <td>
+                     <input type="radio" name="gender">Male</input>
+                     <input type="radio" name="gender">Female</input>
+                  </td>
+               </tr>
+               <!-- gender field end -->
+
+               <tr>
+                  <td>Address:</td>
+                  <td><textarea rows="10" cols="29" onclick="return checkforGender1()"></textarea></td>
+               </tr>
+               <tr>
+                  <td>Age:</td>
+                  <td><input class="input_gen" type="number" min="18" max="50" onclick="return checkforGender2()"
+                        required /></td>
+               </tr>
+
+               <!-- country field start -->
+               <tr>
+                  <td>Country</td>
+                  <td>
+                     <select name="cars" id="cars">
+                        <option value="India">India</option>
+                        <option value="USA">USA</option>
+                        <option value="France">UK</option>
+                        <option value="France">UAE</option>
+                        <option value="Japan">Japan</option>
+                        <option value="France">France</option>
+                     </select>
+                  </td>
+               </tr>
+               <!-- country field end -->
+
+               <tr>
+                  <td>Date of Birth:</td>
+                  <td><input type="date" /></td>
+               </tr>
+               <tr>
+                  <td>Email:</td>
+                  <td><input type="email" size="30" placeholder="someone@gmail.com" required /></td>
+               </tr>
+               <tr>
+                  <td>Phone No:</td>
+                  <td><input type="text" maxlength="12" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                        required /></td>
+               </tr>
+               <tr>
+                  <td>UserName:</td>
+                  <td><input type="text" size="30" required /></td>
+               </tr>
+               <tr>
+                  <td>Password:</td>
+                  <td><input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                        autofocus required></td>
+               </tr>
+
+               <!-- course field start -->
+               <tr>
+                  <td>Course:</td>
+                  <td>
+                     <input type="checkbox" name="chkCourse" autofocus>Python DSA</input>
+                     <input type="checkbox" name="chkCourse" autofocus>.NET Core</input>
+                     <input type="checkbox" name="chkCourse" autofocus>Azure Developer</input>
+                     <input type="checkbox" name="chkCourse" autofocus>Angular 10</input>
+                     <input type="checkbox" name="chkCourse" autofocus>Data Science</input>
+                  </td>
+               </tr>
+               <!-- course field end -->
+
+               <tr>
+                  <td>Favourite Color:</td>
+                  <td><input type="Color" /></td>
+               </tr>
+               <tr>
+                  <td>Total Experience:</td>
+                  <td><input type="range" min="1" max="10" step="1" value="5" /></td>
+               </tr>
+               <tr>
+                  <td>Resume:</td>
+                  <td><input type="file" /></td>
+               </tr>
+               <tr>
+                  <td></td>
+                  <td>
+                     <button class="button" type="submit" formaction="sucess.html" style="vertical-align:middle"
+                        onclick="return courseSelected();"><span style="content: '\00BB';">Save</span></button>
+                     <input class="input1" type="reset" value="Cancel" style="vertical-align:middle" />
+                     <button id="btn" class="button" type="button" onclick="window.location.href = 'html_text.html';"
+                        style="vertical-align:middle"><span style="content:'\00AB';">Home</span></button>
+                  </td>
+               </tr>
+            </table>
+         </form>
+      </div>
+   </section>
+   <!-- registration container section end -->
+
+
+</body>
+
+<!-- java scripts section -->
+<script src="./form_field.js"></script>
+
+</html>
